@@ -1,0 +1,81 @@
+{
+    "objects" :
+    [
+        {
+            "name" : "center",
+            "geometry" : "objs/robot.obj",
+                
+            "materialInstance" : 
+            {
+                "materialIndex" : 0,
+                "uniforms" : [] 
+            }
+        }
+        ,
+        {
+            "name" : "brazo izquierdo",
+            "geometry" : "objs/leftarm.obj",   
+            "transform" : 
+            {
+                "position" : [-0.75,0.75,-1]
+            } 
+            ,           
+            "scripts":[
+                {
+                    "key": "handsanim",
+                    "params" : {
+                        "left" : true
+                    }
+                }
+            ]   
+            ,
+            "materialInstance" : 
+            {
+                "materialIndex" : 0,
+                "uniforms" : [] 
+            }
+        }
+        ,
+        {
+            "name" : "brazo derecho",
+            "geometry" : "objs/rightarm.obj",
+            "transform" : {
+                "position" : [-0.75,0.75,1]
+            },            
+            "materialInstance" : 
+            {
+                "materialIndex" : 0,
+                "uniforms" : [] 
+            },
+            
+            "scripts":[
+                {
+                    "key": "handsanim",
+                    "params" : {
+                        "left" : false
+                    }
+                }
+            ] 
+        }
+    ]
+    ,
+    "materials" : 
+    [        
+        {
+            "fragmentPath" : "shaders/fragCommon.glsl",
+            "vertexPath" : "shaders/vertCommon.glsl",
+            "modelMatrixName" :  "modelMatrix",
+            "viewMatrixName" : "viewMatrix",
+            "projectionMatrixName" : "projectionMatrix",
+            "vertexPositionName" : "vertexPosition"
+        },
+        {
+            "fragmentPath" : "shaders/fragCommon.glsl",
+            "vertexPath" : "shaders/catchSun.glsl",
+            "modelMatrixName" :  "modelMatrix",
+            "viewMatrixName" : "viewMatrix",
+            "projectionMatrixName" : "projectionMatrix",
+            "vertexPositionName" : "vertexPosition"
+        }
+    ]
+}

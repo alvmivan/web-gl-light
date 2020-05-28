@@ -1,0 +1,64 @@
+{
+    "objects" :
+    [        
+        {
+            "name" : "terna",                                    
+            "materialInstance" : 
+            {
+                "materialIndex" : 0,
+                "uniforms" : [] 
+            },
+            "transform": 
+            {
+                "scale" : [5,5,5]
+            },
+            "vertices" : [
+                0,1,0,0,-0.5,0,
+                1,0,0,-0.5,0,0,
+                0,0,1,0,0,-0.5
+            ],
+            "indices" : [0,1,2,3,4,5],
+            "rendererType" : "wireframe",
+            "pureWireframe" : true
+        },
+        {
+            "name" : "ground",                                    
+            "materialInstance" : 
+            {
+                "materialIndex" : 1,
+                "uniforms" : [] 
+            },
+            "transform" : {
+                "position" : [0,-15,0],
+                "scale" : [0,0,0]
+            },
+            "vertices" : [
+                1,0,-1,
+                1,0,1,
+                -1,0,1,
+                -1,0,-1
+            ],
+            "indices" : [0,1,2,2,3,0]
+        }
+    ]
+    ,
+    "materials" : 
+    [        
+        {
+            "fragmentPath" : "shaders/fragCommon.glsl",
+            "vertexPath" : "shaders/gizmos.glsl",
+            "modelMatrixName" :  "modelMatrix",
+            "viewMatrixName" : "viewMatrix",
+            "projectionMatrixName" : "projectionMatrix",
+            "vertexPositionName" : "vertexPosition"
+        },
+        {
+            "fragmentPath" : "shaders/chess.glsl",
+            "vertexPath" : "shaders/vertCommon.glsl",
+            "modelMatrixName" :  "modelMatrix",
+            "viewMatrixName" : "viewMatrix",
+            "projectionMatrixName" : "projectionMatrix",
+            "vertexPositionName" : "vertexPosition"
+        }
+    ]
+}
